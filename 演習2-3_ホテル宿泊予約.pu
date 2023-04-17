@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+actor 利用者
+rectangle 宿泊予約{
+usecase 予約する
+usecase ログインする
+}
+予約する <-- 利用者
+予約する <. ログインする : << include >>
+@enduml
