@@ -1,0 +1,11 @@
+@startuml
+actor 利用者
+rectangle ホテル宿泊予約 {
+usecase ログインする
+usecase キャンペーン価格にする
+usecase (<u>予約する</u>\n拡張点\nキャンペーン期間) as input
+}
+input <-- 利用者
+ログインする <. input : << include >>
+input <. (キャンペーン価格にする) : <<extend>>
+@enduml

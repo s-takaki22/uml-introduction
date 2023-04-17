@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+actor 出荷担当者
+rectangle 新規販売管理システム{
+usecase 注文商品をシステムで確認する
+usecase 商品の出荷状況をシステムに登録する
+}
+出荷担当者 --> 注文商品をシステムで確認する
+商品の出荷状況をシステムに登録する <-- 出荷担当者
+@enduml
