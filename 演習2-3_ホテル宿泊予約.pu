@@ -1,5 +1,6 @@
 @startuml
 left to right direction
+actor 利用者
 rectangle ホテル宿泊予約{
 usecase 予約する
 usecase ログインする
