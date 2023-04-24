@@ -1,0 +1,37 @@
+@startuml
+skinparam classAttributeIconSize 0
+class 空車リスト{
+  - 管理番号:String
+}
+class 車{
+  - 号車:String
+  - 車種:String
+  - 駆動方式:String
+}
+class 顧客{
+  - 顧客ID:String
+  - 氏名:string
+  - 電話番号:string
+  - 郵便番号:String
+  - 住所:String
+  ---
+  + setName(氏名:String) void
+}
+class 予約{
+  - 予約番号:String
+  - 管理番号:String
+  - 顧客ID:String
+  - 予約日:date
+}
+class 貸出{
+  - 貸出番号:String
+  - 管理番号:String
+  - 顧客ID:String
+  - 予約日:date
+}
+hide 空車リスト circle
+hide 車 circle
+hide 顧客 circle
+hide 予約 circle
+hide 貸出 circle
+@enduml
