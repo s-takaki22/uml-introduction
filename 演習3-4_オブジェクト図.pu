@@ -1,0 +1,13 @@
+@startuml
+object 車
+
+object 右前輪
+object 右後輪
+object 左前輪
+object 左後輪
+
+車 --> 右前輪
+車 --> 右後輪
+車 --> 左前輪
+車 --> 左後輪
+@enduml

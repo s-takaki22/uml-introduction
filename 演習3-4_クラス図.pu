@@ -1,0 +1,7 @@
+@startuml
+class 車{
+}
+class タイヤ{
+}
+車 "1"*--left--"4" タイヤ
+@enduml

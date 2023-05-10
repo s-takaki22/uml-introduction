@@ -1,0 +1,43 @@
+@startuml
+object "Aさん" as A {
+  名前: "Aさん"
+}
+
+object "Bさん" as B {
+  名前: "Bさん"
+}
+
+object "301号室" as Room301 {
+  タイプ: "シングル"
+  価格: 11,000円
+  キャンペーン価格: 9,000円
+  宿泊期間: 2泊
+}
+
+object "302号室" as Room302 {
+  タイプ: "シングル"
+  価格: 11,000円
+  キャンペーン価格: 9,000円
+  宿泊期間:
+}
+
+object "303号室" as Room303 {
+  タイプ: "シングル"
+  価格: 11,000円
+  キャンペーン価格: 9,000円
+  宿泊期間: 2泊
+}
+
+object "予約" as Reservation {
+  チェックイン日: 5月3日
+  滞在期間: 2泊
+  値段: 22,000円
+  キャンペーン期間: 4月29日から5月6日
+}
+
+A --> Reservation: 予約
+B --> Reservation: 予約
+Reservation --> Room301: 301号室
+Reservation --> Room302: 302号室
+Reservation --> Room303: 303号室
+@enduml
