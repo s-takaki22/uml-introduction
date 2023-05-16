@@ -1,0 +1,27 @@
+@startuml
+actor ":ユーザ" as User
+participant ":ブラウザ" as Browser
+participant ":Webサーバー" as WebServer
+participant ":画像サーバー" as ImageServer
+
+User -> Browser: リンクボタン押下
+activate User
+activate Browser
+
+Browser -> WebServer: 画像ファイル名要求
+activate WebServer
+
+WebServer -> ImageServer: 画像ファイル検索要求
+activate ImageServer
+
+ImageServer --> WebServer: 画像ファイル検索結果
+deactivate ImageServer
+
+WebServer --> Browser: 画像ファイル提供要求
+deactivate WebServer
+
+Browser --> User: 画像ファイル表示
+deactivate User
+deactivate Browser
+
+@enduml
