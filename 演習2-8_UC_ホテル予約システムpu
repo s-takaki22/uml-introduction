@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor 利用者 as User
+actor ホテル従業員 as Employee
+actor ホテル管理者 as Manager
+rectangle ホテル予約システム{
+usecase 空室状況を閲覧する as ViewAvailability
+usecase 空室状況を入力する as EnterAvailability
+usecase 予約の集計をする as ReservationAggregate
+usecase システムにログインする as UserLogin
+usecase 従業員用のシステムにログインする as EmployeeLogin
+usecase システムに登録する as RegisterUser
+usecase (<u>ホテルの部屋を予約する</u>\n拡張点\nキャンペーン中か判別する) as MakeReservation
+usecase 宿泊価格がキャンペーン価格になる as Promotion
+}
+Employee --> Manager
+MakeReservation <. Promotion : <<extend>>
+UserLogin <. MakeReservation : <<include>>
+MakeReservation <-left- User
+RegisterUser <. UserLogin : <<include>>
+User --> ViewAvailability
+Employee --> EnterAvailability 
+Manager --> ReservationAggregate
+EnterAvailability ..> EmployeeLogin : <<include>>
+ReservationAggregate ..> EmployeeLogin : <<include>>
+@enduml

@@ -1,0 +1,12 @@
+@startuml 演習4-2
+hide footbox
+participant "利用者:ログイン画面" as UserLogiin
+participant ":予約画面" as ReservationScreen
+activate UserLogiin
+UserLogiin ->> ReservationScreen:認証要請()
+activate ReservationScreen
+ReservationScreen -> ReservationScreen: 認証()
+activate ReservationScreen
+deactivate ReservationScreen
+deactivate UserLogiin
+@enduml

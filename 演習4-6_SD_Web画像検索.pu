@@ -1,4 +1,5 @@
-@startuml
+@startuml 演習4-6
+hide footbox
 actor ":ユーザ" as User
 participant ":ブラウザ" as Browser
 participant ":Webサーバー" as WebServer

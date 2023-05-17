@@ -1,0 +1,29 @@
+@startuml シーケンス図
+    hide footbox
+    actor 会員 as member
+    participant 商品検索画面 as searchScreen <<boundary>>
+    participant 商品検索結果画面 as resultScreen <<control>>
+    participant 商品 as product <<entity>>
+    participant カテゴリー as category <<entity>>
+
+    activate member
+    member -> searchScreen
+    activate searchScreen
+    searchScreen -> resultScreen
+    activate resultScreen
+    create product
+    resultScreen --> product : <<create>>生成()
+    loop 商品カテゴリー数
+        resultScreen -> product
+        activate product
+        deactivate product
+        create category
+        resultScreen --> category : <<create>>生成()
+    end loop
+    deactivate resultScreen
+    searchScreen <-- resultScreen
+    searchScreen -> searchScreen
+    activate searchScreen
+    deactivate searchScreen
+    deactivate member
+@enduml

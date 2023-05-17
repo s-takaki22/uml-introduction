@@ -1,0 +1,10 @@
+@startuml 課題4-3
+hide footbox
+participant ":データ更新コントローラ" as Controller
+participant ":ホテル" as Hotel
+participant 予約
+
+Controller -> Hotel: 予約操作を呼び出す
+Hotel -> Hotel: 予約オブジェクトを作成する
+Hotel -> Hotel: 予約登録操作を呼び出す
+@enduml
