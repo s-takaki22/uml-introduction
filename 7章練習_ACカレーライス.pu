@@ -1,0 +1,27 @@
+@startuml 並列処理
+title カレーライス
+start
+:材料を買ってくる;
+fork
+:米を研ぐ;
+fork
+:米を炊く;
+fork again
+:盛り付ける皿を用意する;
+end fork
+fork again
+:野菜を洗う;
+:野菜を切る;
+:肉を切る;
+:玉ねぎを炒める;
+:肉を炒める;
+fork
+:水と野菜とルーを入れて煮込む;
+fork again
+:使った道具を洗う;
+end fork
+end fork
+:米を盛り付ける;
+:カレーを盛り付ける;
+stop
+@enduml
