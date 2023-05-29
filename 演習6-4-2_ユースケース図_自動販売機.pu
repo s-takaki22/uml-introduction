@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+actor ユーザー
+actor ディストリビューター
+rectangle ディスペンサー {
+usecase 価格を投入
+usecase スイッチを押す
+usecase 商品を取り出す
+}
+ユーザー -- 価格を投入
+ユーザー -- スイッチを押す
+ユーザー -- 商品を取り出す
+価格を投入 -- ディストリビューター
+商品を取り出す -- ディストリビューター
+@enduml

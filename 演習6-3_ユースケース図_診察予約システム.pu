@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor ユーザー
+actor スタッフ
+rectangle 予定システム {
+usecase メイン画面
+usecase 予定と確認
+usecase ユーザーの順番
+usecase 現在の順番
+}
+ユーザー --> メイン画面
+ユーザー --> 予定と確認
+ユーザー --> ユーザーの順番
+ユーザー --> 現在の順番
+現在の順番 --> スタッフ
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+hide footbox
+actor ":ユーザー" as user
+participant ":価格装置" as device
+participant ":スイッチ" as button
+participant ":ディストリビューター装置" as distributor
+
+activate user
+user -> device :価格を投入
+activate device
+device -> button :価格が投入されたことを確認
+activate button
+user <-- button
+user -> button :スイッチを押す
+button -> distributor :選択された商品を伝える
+activate distributor
+distributor -> distributor :商品を排出する
+activate distributor
+deactivate distributor
+distributor --> user :商品
+deactivate button
+deactivate device
+deactivate user
+
+@enduml
