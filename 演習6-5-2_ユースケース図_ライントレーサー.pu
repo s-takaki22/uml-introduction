@@ -1,0 +1,12 @@
+@startuml ライントレーサー
+left to right direction
+actor ユーザー
+actor 左右モーター
+actor 光センサー
+rectangle ライントレーサーシステム{
+usecase ラインの右の境界線上を進む
+}
+ユーザー -- ラインの右の境界線上を進む
+ラインの右の境界線上を進む -- 光センサー
+ラインの右の境界線上を進む -- 左右モーター
+@enduml
